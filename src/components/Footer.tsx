@@ -19,7 +19,7 @@ const Footer = () => {
           </div>
           <p className="text-sm text-[#8A8FB9] mb-2">Contact Info</p>
           <p className="text-sm text-[#8A8FB9]">
-            Link Road Hala, Mattiari, Sindh, Pakistan
+             Sindh, Pakistan
           </p>
         </div>
 

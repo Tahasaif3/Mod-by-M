@@ -25,13 +25,13 @@ const Navbar = () => {
               <div className="flex items-center gap-2">
                 <MdOutlineEmail />
                 <span className="text-[12px] md:text-[16px]">
-                  Jawaidali0735@gmail.com
+                  hektofurniture@gmail.com
                 </span>
               </div>
               <div className="flex items-center gap-2">
                 <FaPhoneAlt />
                 <span className="text-[12px] md:text-[16px]">
-                  (+923156520735)
+                  (+92365738536)
                 </span>
               </div>
             </div>
