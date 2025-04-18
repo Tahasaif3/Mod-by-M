@@ -66,9 +66,9 @@ export const productData = {
   
   
     executiveChairs: [
-      {id:15, name: "Executive Seat Chair 1", price: "$39.00", old:"", image: "/exec1.png" },
-      {id:16, name: "Executive Seat Chair 2", price: "$39.00",old:"", image: "/exec2.png" },
-      {id:17, name: "Executive Seat Chair 3", price: "$39.00", old:"", image: "/exec3.png" },
+      {id:15, name: "Executive Luxury Women Bag 1", price: "$39.00", old:"", image: "/p2.png" },
+      {id:16, name: "Executive Luxury Women Bag 2", price: "$39.00",old:"", image: "/p3.png" },
+      {id:17, name: "Executive Luxury Women Bag 3", price: "$39.00", old:"", image: "/p4.png" },
     ],
      relatedProduct :[
         {

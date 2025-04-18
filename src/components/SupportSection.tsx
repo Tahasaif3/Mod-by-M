@@ -1,69 +1,64 @@
-import React from "react";
-import Image from "next/image";
-const supports = [
-  {
-    id: 1,
-    title: "24/7 Support",
-    description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Massa purus gravida.",
-    icon: "/support-icon1.png",
-  },
-  {
-    id: 2,
-    title: "24/7 Support",
-    description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Massa purus gravida.",
-    icon: "/support-icon2.png",
-  },
-  {
-    id: 3,
-    title: "24/7 Support",
-    description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Massa purus gravida.",
-    icon: "/support-icon3.png",
-  },
-  {
-    id: 4,
-    title: "24/7 Support",
-    description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Massa purus gravida.",
-    icon: "/support-icon4.png",
-  },
-];
+import type React from "react"
+import { FaShippingFast, FaHeadset, FaShieldAlt, FaRegCreditCard } from "react-icons/fa"
 
-type  HeadingProps = {
-  heading: string;
+interface SupportSectionProps {
+  heading: string
 }
-const SupportSection = ({ heading }:HeadingProps) => {
-  return (
-    <section className="p-8 mt-16 max-w-[1177px] mx-auto">
-      <h2 className="text-[42px] font-semibold text-center mb-8 font-josefin text-[#151875]">
-      { heading }
-      </h2>
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 place-items-center">
-        {supports.map((support) => (
-          <div
-            key={support.id}
-            className="bg-white shadow-lg p-6 text-center w-[270px] h-[320px] flex flex-col justify-center items-center mx-auto"
-          >
-            <Image
-              src={support.icon}
-              alt={support.title}
-              width={200}
-              height={100}
-              className="mx-auto mb-6 mt-8 w-24 h-16"
-            />
-            <h3 className="text-lg font-bold text-[#151875] text-[22px]">
-              {support.title}
-            </h3>
-            <p className="text-[#1A0B5B4D] mt-4 text-[16px]">
-              {support.description}
-            </p>
-          </div>
-        ))}
-      </div>
-    </section>
-  );
-};
 
-export default SupportSection;
+const SupportSection: React.FC<SupportSectionProps> = ({ heading }) => {
+  const features = [
+    {
+      icon: <FaShippingFast className="text-3xl text-yellow-600" />,
+      title: "Free Shipping",
+      description: "Free worldwide shipping on all orders over $250",
+    },
+    {
+      icon: <FaHeadset className="text-3xl text-yellow-600" />,
+      title: "24/7 Support",
+      description: "Dedicated support team available around the clock",
+    },
+    {
+      icon: <FaRegCreditCard className="text-3xl text-yellow-600" />,
+      title: "Secure Payment",
+      description: "Multiple secure payment methods accepted",
+    },
+    {
+      icon: <FaShieldAlt className="text-3xl text-yellow-600" />,
+      title: "Quality Guarantee",
+      description: "Each product comes with a 2-year quality guarantee",
+    },
+  ]
+
+  return (
+    <div className="py-16 md:py-24 bg-gradient-to-b from-white to-yellow-50">
+      <div className="max-w-[1177px] mx-auto px-4 md:px-8">
+        <div className="text-center mb-16">
+          <span className="inline-block px-3 py-1 bg-yellow-50 text-yellow-700 rounded-full text-xs uppercase tracking-wider font-medium border border-yellow-200 mb-4">
+            Excellence in Every Detail
+          </span>
+          <h2 className="text-3xl md:text-4xl font-josefin font-bold text-gray-800 mb-4">
+            {heading.split(" ")[0]} <span className="gold-text">{heading.split(" ").slice(1).join(" ")}</span>
+          </h2>
+          <div className="h-[3px] w-24 gold-gradient mx-auto"></div>
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          {features.map((feature, index) => (
+            <div
+              key={index}
+              className="bg-white p-8 rounded-lg shadow-gold-sm hover:shadow-gold-lg transition-all duration-300 text-center group hover:-translate-y-2"
+            >
+              <div className="gold-icon-circle mx-auto mb-6 group-hover:scale-110 transition-transform duration-300">
+                {feature.icon}
+              </div>
+              <h3 className="text-xl font-josefin font-bold text-gray-800 mb-3">{feature.title}</h3>
+              <p className="text-gray-600 text-sm">{feature.description}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  )
+}
+
+export default SupportSection

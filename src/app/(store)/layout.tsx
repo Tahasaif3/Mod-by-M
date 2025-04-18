@@ -2,14 +2,11 @@ import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "../globals.css";
 import Navbar from "@/components/Navbar";
-
 import Footer from "@/components/Footer";
-import FooterBottom from "@/components/FooterBottom";
 import { Toaster } from "react-hot-toast";
 import { ClerkProvider } from "@clerk/nextjs";
-
 import Navbar2 from "@/components/Navbar2";
-
+import ChatBot from "@/components/Chatbot"
 const geistSans = localFont({
   src: "../fonts/GeistVF.woff",
   variable: "--font-geist-sans",
@@ -40,10 +37,9 @@ export default function RootLayout({
           <main>
             <Navbar />
             <Navbar2 />
-
             {children}
             <Footer />
-            <FooterBottom />
+            <ChatBot />
           </main>
           <Toaster
             position="bottom-right"
